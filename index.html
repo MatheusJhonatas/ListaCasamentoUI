@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ana Beatriz e Matheus - Site dos Noivos </title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+
+
+            </div>
+
+            <div class="nav-list">
+                <ul id="menu" class="scroll-menu">
+                    <li class="nav-item"><a href="#home" data-scroll-href="home-scroll" class="nav-link">
+                            Sobre Nós </a></li>
+                    <li class="nav-item"><a href="#padrinhos" data-scroll-href="estatisticas-scroll"
+                            class="nav-link">Padrinhos</a></li>
+                    <li class="nav-item"><a href="#convidados" data-scroll-href="convidados-scroll"
+                            class="nav-link">Lista
+                            de Convidados</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button id="loginButton">Entrar</button>
+            </div>
+        </nav>
+    </header>
+    <section id="home">
+        <h1> Ana Beatriz e Matheus </h1>
+        <div class="imagem-bar">
+            <img src="assets/imagens/Imagem do WhatsApp de 2024-07-02 à(s) 15.46.07_7a17ac2d.jpg"
+                alt="Matheus e Ana Beatriz estão em uma mesa de bar olhando para a foto, os dois com camisetas pretas e sorrindo.">
+        </div>
+
+        <p>Tudo começou em um dia comum que acabou se tornando o início de algo extraordinário. Foi no dia 29 de março
+            de 2016 que nos conhecemos, bem ali, na frente da casa dela. Antes disso, nossas primeiras palavras foram
+            trocadas pelo Instagram, onde o destino resolveu nos conectar de forma inesperada.
+        </p>
+        <p>
+            Naquele mesmo dia, o que era apenas um encontro se transformou em um momento inesquecível: nosso primeiro
+            beijo, também na frente da casa dela. Desde então, nosso amor só cresceu, e cada passo que demos juntos nos
+            trouxe até aqui, prontos para celebrar o próximo capítulo dessa linda história.
+
+            Com vocês ao nosso lado, esse dia será ainda mais especial! 💕
+        </p>
+
+    </section>
+    <section id="padrinhos">
+        <h2> Padrinhos </h2>
+        <p>Os padrinhos ocupam um lugar especial em nossos corações e em nossa jornada. São amigos e familiares que
+            caminharam conosco, compartilharam sorrisos, lágrimas e momentos inesquecíveis.
+
+            Escolhemos vocês porque acreditamos que não há pessoas melhores para estar ao nosso lado nesse dia tão
+            importante. Obrigado por aceitarem fazer parte do nosso grande dia e por serem pilares de amor, apoio e
+            alegria em nossas vidas.
+
+            Com vocês, nosso dia será ainda mais completo e cheio de significado. 💕</p>
+
+    </section>
+</body>
+
+</html>
+
+</p>
+<section id="convidados">
+    <h2> Convidados</h2>
+    <p> Cada um de vocês faz parte de nossa história e tornou nosso caminho até aqui ainda mais especial. Estamos muito
+        felizes em compartilhar esse momento tão importante ao lado de pessoas tão queridas.
+
+        Este espaço é dedicado a vocês, que nos acompanham e que estarão presentes para celebrar esse dia inesquecível.
+        Prepare-se para muita emoção, alegria e, é claro, uma festa incrível!</p>
+
+    <div class="container">
+
+        <div class="form-image">
+            <img src="assets/imagens/undraw_love_is_in_the_air_4uud.svg" alt="">
+        </div>
+        <div class="formulario">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h4>Colocar nome na lista</h4>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome">Nome Completo</label>
+                        <input id="nome" type="text" name="Nome" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="Telefone">Celular</label>
+                        <input id="Telefone" type="tel" name="Telefone" placeholder="(11).99999-9999" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="Email" placeholder="Digite seu E-mail" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="aniversario">Data de Nascimento</label>
+                        <input id="aniversario" type="text" name="Data de Nascimento"
+                            placeholder="Digite sua Data de Nascimento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="Gênero">Gênero</label>
+                        <input id="genero" type="text" name="Gênero" placeholder="Digite seu Gênero" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="Família">Família</label>
+                        <input id="familia" type="text" name="Família" placeholder="Digite santos ou brandão" required>
+                    </div>
+                </div>
+                <div class="gender-inputs">
+                </div>
+                <div class="enviar-button">
+                    <button type="submit">Enviar</button>
+                </div>
+        </div>
+    </div>
+
+    </form>
+    <script>
+
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('Telefone').value;
+            const email = document.getElementById('email').value;
+            const aniversario = document.getElementById('aniversario').value;
+            const genero = document.getElementById('genero').value;
+            const familia = document.getElementById('familia').value;
+
+            // if (!familiaElement) {
+            //     alert('Por favor, selecione uma opção de família.');
+            //     return;
+            // }
+
+            // const sexo = generoElement.id;
+            // const familia = familiaElement.id;
+
+            console.log('Nome:', nome);
+            console.log('Telefone:', telefone);
+            console.log('Email:', email);
+            console.log('Data de Nascimento:', aniversario);
+            console.log('Gênero:', genero);
+            console.log('Família:', familia);
+            fetch('https://localhost:44304/v1/convidados', {
+                mode: 'cors',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nome: nome,
+                    telefone: telefone,
+                    email: email,
+                    aniversario: aniversario,
+                    sexo: genero,
+                    familia: familia,
+                    id: Date.now()
+                })
+            }).then(res => {
+                if (!res.ok) {
+                    throw new Error('Erro ao enviar os dados.');
+                }
+                return res.json();
+            }).then(data => {
+                console.log('Dados enviados com sucesso:', data);
+                alert(`Usuário ${nome} cadastrado na lista de casamento com sucesso!`);
+                // 
+            }).catch(error => {
+                console.error('Erro:', error);
+                alert('Falha interna no Servidor. Tente novamente mais tarde.');
+            });
+            document.querySelector('form').reset();
+            window.scrollTo(0, 0);
+            // window.location.reload();
+
+        });
+        document.getElementById('loginButton').addEventListener('click', function () {
+            window.location.href = 'login.html';
+        });
+    </script>
+    <script>
+
+    </script>
+
+    </div>
+
+    </div>
+    </body>
+
+</section>
+
+
+</html>
