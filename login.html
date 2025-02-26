@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Crie sua conta</title>
-    <link rel="stylesheet" href="estiloLogin.css"> <!-- Adicione esta linha -->
+    <link rel="stylesheet" href="assets/css/estiloLogin.css"> <!-- Adicione esta linha -->
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <form id="loginForm" action="/login" method="post">
             <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
             <input type="email" id="email" name="email" placeholder="Email" required>
-            <button type="submit">Entrar</button>
+            <button type="submit">Criar Conta</button>
         </form>
     </div>
 
@@ -44,7 +44,7 @@
                     return res.json();
                 }).then(data => {
                     console.log('Dados enviados com sucesso:', data);
-                    alert(`Usuário ${nome} cadastrado na lista de casamento com sucesso!`);
+                    alert(`${nome} Enviamos sua senha no email cadastrado!`);
                 }).catch(error => {
                     console.error('Erro:', error);
                     alert('Falha interna no Servidor. Tente novamente mais tarde.');
