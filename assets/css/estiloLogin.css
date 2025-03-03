@@ -32,16 +32,17 @@
  .login-container button {
      width: 100%;
      padding: 13px;
-     background-color: #16181b;
+     background-color: transparent;
      border: none;
-     border-radius: 4px;
-     color: #fff;
+     border-radius: 8px 8px 0px 0px;
+     color: #050404;
      font-size: 16px;
      cursor: pointer;
+     font-weight: 500;
  }
 
  .login-container button:hover {
-     background-color: #0056b3;
+     background-color: #6C63FF;
  }
 
  .tab {
@@ -50,12 +51,21 @@
 
  .tab.active {
      display: block;
+
  }
 
  .tab-buttons {
      display: flex;
      justify-content: center;
      margin-bottom: 20px;
+     width: 100%;
+     padding: 13px;
+     background-color: transparent;
+     border: none;
+     border-radius: 8px 8px 0px 0px;
+     color: #050404;
+     font-size: 16px;
+     cursor: pointer;
  }
 
  .tab-buttons button {
