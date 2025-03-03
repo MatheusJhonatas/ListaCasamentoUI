@@ -5,23 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Crie sua conta</title>
-    <link rel="stylesheet" href="assets/css/estiloLogin.css"> <!-- Adicione esta linha -->
+    <link rel="stylesheet" href="assets/css/estiloLogin.css">
+
 </head>
 
 <body>
     <div class="login-container">
-        <h2>Crie sua conta</h2>
-        <p>Crie sua conta para gerenciar melhor seus convidados</p>
-        <form id="loginForm" action="/login" method="post">
-            <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <button type="submit">Criar Conta</button>
-        </form>
+        <div class="tab-buttons">
+            <button onclick="showTab('login')">Entrar</button>
+            <button onclick="showTab('signup')">Criar Conta</button>
+        </div>
+        <div id="login" class="tab">
+            <h2>Entrar</h2>
+            <form id="loginForm" action="/login" method="post"></form>
+            <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+            <input type="password" id="loginPassword" name="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+            </form>
+        </div>
+        <div id="signup" class="tab active">
+            <h2>Crie sua conta</h2>
+            <p>Crie sua conta para gerenciar melhor seus convidados</p>
+            <form id="signupForm" action="/signup" method="post">
+                <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <button type="submit">Criar Conta</button>
+            </form>
+        </div>
     </div>
 
     <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
+            document.getElementById('signupForm').addEventListener('submit', function (event) {
                 event.preventDefault();
                 const nome = document.getElementById('nome').value;
                 const email = document.getElementById('email').value;
@@ -49,6 +71,18 @@
                     console.error('Erro:', error);
                     alert('Falha interna no Servidor. Tente novamente mais tarde.');
                 });
+                document.getElementById('signupForm').reset();
+                window.scrollTo(0, 0);
+            });
+
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                console.log('Email:', email);
+                console.log('Password:', password);
+                // Adicione aqui a lógica para enviar os dados de login para o servidor
+                alert('Login realizado com sucesso!');
                 document.getElementById('loginForm').reset();
                 window.scrollTo(0, 0);
             });

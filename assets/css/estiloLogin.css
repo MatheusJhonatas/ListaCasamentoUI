@@ -43,3 +43,23 @@
  .login-container button:hover {
      background-color: #0056b3;
  }
+
+ .tab {
+     display: none;
+ }
+
+ .tab.active {
+     display: block;
+ }
+
+ .tab-buttons {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 20px;
+ }
+
+ .tab-buttons button {
+     margin: 0 10px;
+     padding: 10px 20px;
+     cursor: pointer;
+ }
