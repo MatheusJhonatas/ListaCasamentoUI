@@ -51,7 +51,28 @@
 
  .tab.active {
      display: block;
+ }
 
+ #loginForm button {
+     width: 100%;
+     padding: 10px;
+     background-color: #16181b;
+     border: none;
+     border-radius: 4px;
+     color: #fff;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ #signup button {
+     width: 100%;
+     padding: 10px;
+     background-color: #16181b;
+     border: none;
+     border-radius: 4px;
+     color: #fff;
+     font-size: 16px;
+     cursor: pointer;
  }
 
  .tab-buttons {
@@ -63,7 +84,7 @@
      background-color: transparent;
      border: none;
      border-radius: 8px 8px 0px 0px;
-     color: #050404;
+     color: #000000;
      font-size: 16px;
      cursor: pointer;
  }
