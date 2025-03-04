@@ -15,15 +15,15 @@
     </div>
     <div class="login-container">
         <div class="tab-buttons">
-            <button onclick="showTab('login')">Entrar</button>
-            <button onclick="showTab('signup')">Criar Conta</button>
+            <button class="tab-button" onclick="showTab('login')">Entrar</button>
+            <button class="tab-button" onclick="showTab('signup')">Criar Conta</button>
         </div>
         <div id="login" class="tab">
             <h2>Entrar</h2>
-            <form id="loginForm" action="/login" method="post"></form>
-            <input type="email" id="loginEmail" name="email" placeholder="Email" required>
-            <input type="password" id="loginPassword" name="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
+            <form id="loginForm" action="/login" method="post">
+                <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+                <input type="password" id="loginPassword" name="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
             </form>
         </div>
         <div id="signup" class="tab active">
@@ -32,9 +32,11 @@
             <form id="signupForm" action="/signup" method="post">
                 <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
                 <input type="email" id="email" name="email" placeholder="Email" required>
-                <button type="submit">Criar Conta</button>
+                <button type="submit">Enviar dados</button>
             </form>
         </div>
+    </div>
+    </div>
     </div>
 
     <script>
