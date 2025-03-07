@@ -51,8 +51,50 @@
             });
             document.getElementById(tabId).classList.add('active');
         }
-
         document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                console.log('Email:', email);
+                console.log('Password:', password);
+                fetch('http://localhost:5173/v1/accounts/login', {
+                    mode: 'cors',
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                }).then(res => {
+                    if (!res.ok) {
+                        throw new Error('Erro ao enviar os dados.');
+                    }
+                    return res.json();
+                }).then(data => {
+                    console.log('Dados enviados com sucesso:', data);
+                    alert('Login realizado com sucesso!');
+                    window.location.href = 'Home.html';
+                }).catch(error => {
+                    console.error('Erro:', error);
+                    alert('Falha interna no Servidor. Tente novamente mais tarde.');
+                });
+                document.getElementById('loginForm').reset();
+                window.scrollTo(0, 0);
+            });
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                console.log('Email:', email);
+                console.log('Password:', password);
+                // Adicione aqui a lógica para enviar os dados de login para o servidor
+                alert('Login realizado com sucesso!');
+                document.getElementById('loginForm').reset();
+                window.scrollTo(0, 0);
+            });
             document.getElementById('signupForm').addEventListener('submit', function (event) {
                 event.preventDefault();
                 const nome = document.getElementById('nome').value;
@@ -85,18 +127,9 @@
                 window.scrollTo(0, 0);
             });
 
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-                const email = document.getElementById('loginEmail').value;
-                const password = document.getElementById('loginPassword').value;
-                console.log('Email:', email);
-                console.log('Password:', password);
-                // Adicione aqui a lógica para enviar os dados de login para o servidor
-                alert('Login realizado com sucesso!');
-                document.getElementById('loginForm').reset();
-                window.scrollTo(0, 0);
-            });
+
         });
+
     </script>
 </body>
 
