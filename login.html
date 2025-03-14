@@ -38,8 +38,10 @@
                 <form id="signupForm" action="/signup" method="post">
                     <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
                     <input type="email" id="email" name="email" placeholder="Email" required>
-                    <button type="submit">Enviar dados</button>
-                </form>
+                    <button type="submit" id="submitBtn" title="Enviar dados">
+                        <span id="btnText" aria-live="polite">Enviar dados</span>
+                        <span id="loadingSpinner" class="spinner" style="display: none;"></span>
+                    </button>
             </div>
         </div>
     </main>
@@ -77,6 +79,7 @@
                     console.log('Dados enviados com sucesso:', data);
                     alert('Login realizado com sucesso!');
                     window.location.href = 'Home.html';
+
                 }).catch(error => {
                     console.error('Erro:', error);
                     alert('Falha interna no Servidor. Tente novamente mais tarde.');
@@ -84,21 +87,29 @@
                 document.getElementById('loginForm').reset();
                 window.scrollTo(0, 0);
             });
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-                const email = document.getElementById('loginEmail').value;
-                const password = document.getElementById('loginPassword').value;
-                console.log('Email:', email);
-                console.log('Password:', password);
-                // Adicione aqui a lógica para enviar os dados de login para o servidor
-                alert('Login realizado com sucesso!');
-                document.getElementById('loginForm').reset();
-                window.scrollTo(0, 0);
-            });
             document.getElementById('signupForm').addEventListener('submit', function (event) {
                 event.preventDefault();
                 const nome = document.getElementById('nome').value;
                 const email = document.getElementById('email').value;
+                const submitBtn = document.getElementById('submitBtn');
+                const btnText = document.getElementById('btnText');
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                // Ativa o spinner e desabilita o botão
+                btnText.textContent = "Enviando...";
+                submitBtn.setAttribute("aria-label", "Enviando dados");
+                submitBtn.setAttribute("aria-busy", "true");
+                loadingSpinner.style.display = "inline-block";
+                submitBtn.disabled = true;
+                // Simula uma requisição assíncrona
+                // setTimeout(() => {
+                //     btnText.textContent = "Enviar dados";
+                //     submitBtn.setAttribute("aria-label", "Enviar dados");
+                //     submitBtn.removeAttribute("aria-busy");
+
+                //     loadingSpinner.style.display = "none";
+                //     submitBtn.disabled = false;
+                // }, 3000);
+
                 console.log('Nome:', nome);
                 console.log('Email:', email);
                 fetch('http://localhost:5173/v1/accounts', {
@@ -122,12 +133,16 @@
                 }).catch(error => {
                     console.error('Erro:', error);
                     alert('Falha interna no Servidor. Tente novamente mais tarde.');
-                });
+                })
+                    .finally(() => {
+                        // Remove o efeito de carregamento e habilita o botão novamente
+                        btnText.textContent = "Enviar dados";
+                        loadingSpinner.style.display = "none";
+                        submitBtn.disabled = false;
+                    })
                 document.getElementById('signupForm').reset();
                 window.scrollTo(0, 0);
             });
-
-
         });
 
     </script>
