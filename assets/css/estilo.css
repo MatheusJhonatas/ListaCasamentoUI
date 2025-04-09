@@ -301,3 +301,18 @@ input[type="tel"] {
     color: #ffffff;
     /* Fonte do botão alterada para branco */
 }
+
+.footer {
+    background-color: #181717;
+    box-shadow: 0px 3px 15px #464646;
+    padding: 20px 0;
+    text-align: center;
+    color: #f3f2f2;
+    font-size: 14px;
+    margin-top: 600px;
+    border-top: 1px solid #1c1a1a;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
