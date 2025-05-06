@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Crie sua conta</title>
+    <title>Recuperação de Senha</title>
     <link rel="stylesheet" href="assets/css/estiloLogin.css">
 </head>
 
@@ -20,25 +20,15 @@
 
         <div class="login-container">
             <div class="tab-buttons">
-                <button class="tab-button" onclick="showTab('login')">Entrar</button>
-                <button class="tab-button" onclick="showTab('signup')">Criar Conta</button>
-
             </div>
             <div id="login" class="tab">
                 <h2>Entrar</h2>
-                <form id="loginForm" action="/login" method="post">
-                    <input type="email" id="loginEmail" name="email" placeholder="Email" required>
-                    <input type="password" id="loginPassword" name="password" placeholder="Senha" required>
 
-                    <button type="submit">Entrar</button>
-                    <a href="/forgot-passoword.html" class="forgot-password-link">Esqueceu sua senha?</a>
-                </form>
             </div>
             <div id="signup" class="tab active">
-                <h2>Crie sua conta</h2>
-                <p>Crie sua conta para gerenciar melhor seus convidados</p>
+                <h2>Informe o seu email para a recuperação de senha.</h2>
                 <form id="signupForm" action="/signup" method="post">
-                    <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+
                     <input type="email" id="email" name="email" placeholder="Email" required>
                     <button type="submit" id="submitBtn" title="Enviar dados">
                         <span id="btnText" aria-live="polite">Enviar dados</span>
@@ -102,15 +92,6 @@
                 submitBtn.setAttribute("aria-busy", "true");
                 loadingSpinner.style.display = "inline-block";
                 submitBtn.disabled = true;
-                // Simula uma requisição assíncrona
-                // setTimeout(() => {
-                //     btnText.textContent = "Enviar dados";
-                //     submitBtn.setAttribute("aria-label", "Enviar dados");
-                //     submitBtn.removeAttribute("aria-busy");
-
-                //     loadingSpinner.style.display = "none";
-                //     submitBtn.disabled = false;
-                // }, 3000);
 
                 console.log('Nome:', nome);
                 console.log('Email:', email);
