@@ -30,11 +30,6 @@ img {
     width: 1050px;
 }
 
-a {
-    text-align: center;
-    margin-top: 32px;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -177,4 +172,67 @@ body {
 button:disabled {
     background-color: rgb(8, 7, 7);
     cursor: not-allowed;
+}
+
+.login-recuperacao {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.login-recuperacao h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-recuperacao input {
+    width: 93%;
+    padding: 8px;
+    margin: 13px 0;
+    border: 1px solid #ccc;
+    border-radius: 125px;
+}
+
+.login-recuperacao button {
+    width: 100%;
+    padding: 13px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px 8px 0px 0px;
+    color: #050404;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.login-recuperacao button:hover {
+    background-color: #6C63FF;
+}
+
+.tab-buttons-recuperacao {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-buttons-recuperacao button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #16181b;
+    font-size: 17px;
+}
+
+.tab-buttons-recuperacao button.active {
+    border-bottom: 2px solid hsl(0, 0%, 0%);
+}
+
+.tab-buttons-recuperacao button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
